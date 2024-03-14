@@ -1,0 +1,73 @@
+.figure {
+  background-color: white;
+  border-radius: 4px;
+  padding: 0.5em;
+  position: fixed;
+  right: 20px;
+  font-size: 2rem;
+
+  p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.stop {
+  .space-shuttle-container {
+    animation: none;
+  }
+  .solid-rocket-booster-exhaust,
+  .main-engine-exhaust {
+    display: none;
+  }
+
+  /* Shake Effect */
+  .rocket,
+  .orbiter,
+  .main-engine-exhaust,
+  .solid-rocket-booster-exhaust {
+    animation: none;
+  }
+}
+
+.error {
+  .rocket,
+  .orbiter {
+    *,
+    *:before,
+    *:after {
+      animation: blink 0.3s infinite; /* Thực hiện animation vô hạn trong 1 giây */
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    background: linear-gradient(to right, var(--orange), var(--red));
+  }
+  50% {
+    background: linear-gradient(to right, var(--silver), var(--silver));
+  }
+  100% {
+    background: linear-gradient(to right, var(--orange), var(--red));
+  }
+}
+
+.done {
+  .space-shuttle-container {
+    display: none;
+  }
+}
+
+.speed,
+.status {
+  .done &,
+  .error & {
+    color: red;
+  }
+
+  color: green;
+}
