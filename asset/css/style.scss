@@ -1,0 +1,177 @@
+$land-height: 5rem;
+$space-position-bottom: $land-height - 4.25rem;
+$space-position-left: 3rem;
+$fly-interval: 10s;
+$fall-interval: 3s;
+
+body {
+  background: #79cdff;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.land {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  background: white;
+  height: $land-height;
+  width: 100%;
+}
+
+.space-shuttle {
+  width: 10rem;
+  height: 12rem;
+  // background: url("shuttle-space.svg");
+  object-fit: cover;
+  position: absolute;
+  bottom: $space-position-bottom;
+  left: $space-position-left;
+  display: flex;
+  // border-top: 4px solid red;
+  img {
+    // object-fit: cover;
+    // position: absolute;
+    width: 8rem;
+    height: 12rem;
+
+    &.is-fire,
+    &.is-explore {
+      position: relative;
+      left: -0.8rem;
+      bottom: 2.5rem;
+      width: 10.5rem;
+      height: 14.5rem;
+    }
+
+    &.is-explore {
+      left: -0.5rem;
+      // bottom: 2.85rem;
+    }
+    &.is-piece {
+      bottom: 80vh;
+      left: calc($space-position-left + 5rem);
+      width: 8rem;
+      height: 8rem;
+      // transform: rotate(30deg);
+    }
+  }
+
+  .fly & {
+    animation: fly $fly-interval ease-in forwards;
+  }
+
+  .fire &,
+  .explore &,
+  .fall & {
+    .normal {
+      display: none;
+    }
+  }
+
+  .is-fire {
+    display: none;
+
+    .fire & {
+      display: block;
+    }
+  }
+
+  .is-explore {
+    display: none;
+
+    .explore & {
+      display: block;
+    }
+  }
+
+  .is-piece {
+    display: none;
+    visibility: hidden;
+    rotate: 275deg;
+
+    .fall & {
+      display: block;
+      visibility: visible;
+      position: relative;
+      z-index: 10;
+
+      animation: falling $fall-interval ease-in forwards;
+    }
+  }
+}
+
+@keyframes fly {
+  0% {
+    bottom: $space-position-bottom;
+    left: $space-position-left;
+    transform: rotate(0);
+  }
+
+  90% {
+    left: calc($space-position-left + 15rem);
+    transform: rotate(25deg);
+    bottom: 60vh;
+  }
+
+  100% {
+    bottom: 70vh;
+    left: calc($space-position-left + 18rem);
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: scale(1.5);
+    top: -1rem;
+    left: 3rem;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    top: 10rem;
+    left: 20rem;
+    opacity: 0;
+  }
+}
+
+.figure {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  width: 15rem;
+  span {
+    font-weight: bold;
+  }
+
+  .speed,
+  .status {
+    color: green;
+
+    .error & {
+      color: red;
+    }
+  }
+
+  .bit-container {
+    margin-top: 2rem;
+    max-height: 40vh;
+    font-size: 1rem;
+    overflow: auto;
+    font-weight: 300 !important;
+
+    .label {
+      min-width: 3rem;
+      display: inline-block;
+    }
+  }
+}

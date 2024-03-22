@@ -5,71 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="/asset/css/reset.css">
+  <link rel="stylesheet" href="/asset/css/style.css">
 </head>
 
-<body class="stop">
-  <div class="container">
-    <!-- Sky -->
-    <div class="sky"></div>
+<body class="">
 
-    <!-- Space Shuttle -->
-    <div class="space-shuttle-container">
-      <div class="rocket">
-        <!-- Tank -->
-        <div class="tank-connector"></div>
-        <div class="tank">
-          <div class="tank-ring-frame"></div>
-        </div>
+  <section class="land">
 
-        <!-- Rocket -->
-        <div class="left-rocket"></div>
-        <div class="left-rocket-engine"></div>
-        <div class="right-rocket"></div>
-        <div class="right-rocket-engine"></div>
-      </div>
+  </section>
+  <section class="space-shuttle">
+    <img src="/asset/images/space-shuttle.svg" class="normal" alt="" srcset="">
+    <img src="/asset/images/space-shuttle-fire.svg" class="is-fire" alt=""
+      srcset="">
+    <img src="/asset/images/space-shuttle-explore.svg" class="is-explore" alt=""
+      srcset="">
 
-      <!-- Orbiter -->
-      <div class="orbiter">
-        <div class="wing-bottom"></div>
-        <div class="wing"></div>
-        <div class="fuselage"></div>
-        <div class="fuselage-window"></div>
-        <div class="cabin"></div>
-        <div class="cargo-bay"></div>
-        <div class="elevon"></div>
-        <div class="elevon-left"></div>
-        <div class="elevon-right"></div>
-        <div class="aft-fuselage-block"></div>
-        <div class="main-engine-left-connector"></div>
-        <div class="main-engine-left"></div>
-        <div class="main-engine-right-connector"></div>
-        <div class="main-engine-right"></div>
-        <div class="main-engine-top-connector"></div>
-        <div class="main-engine-top"></div>
-        <div class="maneuvering-engine-right"></div>
-        <div class="maneuvering-engine-left"></div>
-        <div class="vertical-stabilizer"></div>
-        <div class="aft-fuselage"></div>
-      </div>
+    <img src="/asset/images/piece.svg" class="is-piece" alt="" srcset="">
+  </section>
+  <!-- <div class="axis">
+    <div class="x-axis"></div>
+    <div class="y-axis"></div>
+  </div> -->
 
-      <!-- Rocket Exhaust -->
-      <div class="solid-rocket-booster-exhaust"></div>
-      <div class="main-engine-exhaust"></div>
-    
-    </div>
-    <!-- Water Clouds -->
-    <!-- <div class="water-clouds"></div> -->
-  </div>
-  <figure class="figure">
-    <p>Vận tốc: <span class="speed">0</span> Km/s</p>
-    <p>Gia tốc: <span class="acceleration">0</span> Km/s</p>
-    <p>Trạng thái: <span class="status">Bình thường</span></p>
-    <button id="startButton" class="start-button">Bắt đầu</button>
-    
-  </figure>
-  <script src="script.js"></script>
+  <section class="figure">
+    <p>Speed: <span class="speed">0</span> Km/s</p>
+    <p>Bias: <span class="bias">0</span>°</p>
+    <p>Status: <span class="status">Normal</span></p>
+
+    <div class="bit-container"></div>
+    <button class="start">Start</button>
+  </section>
+  <script src="/asset/js/script.js"></script>
 </body>
 
 </html>
