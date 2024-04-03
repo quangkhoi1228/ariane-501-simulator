@@ -84,13 +84,15 @@ function start() {
   const momentum = ((max16Bit) / (flyInterval / 1000 - 1)) / split;
   const biasMomen = ((maxBias) / (flyInterval / 1000 - 1)) / split;
 
+  300 
+
   const speedInterval = setInterval(() => {
     speedValue += (momentum)
     biasValue += biasMomen;
 
     speed.innerHTML = Number(speedValue.toFixed(0)).toLocaleString();
     bias.innerHTML = Number(biasValue.toFixed(0)).toLocaleString();
-    statusElem.innerHTML = speedValue > max16Bit ? "Error" : 'Normal'
+    statusElem.innerHTML = speedValue > max16Bit ? "Explode" : 'Normal'
     // temp 16 bit
     bitOutput(Number(speedValue.toFixed(0)))
 
