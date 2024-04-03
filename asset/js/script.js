@@ -1,6 +1,6 @@
 function start() {
 
-  const totalTime = 10 * 1000;
+  const totalTime = 37 / 0.8 * 1000;
   const max16Bit = Math.pow(2, 15); // 32768 
   const maxBias = 30;
 
@@ -74,17 +74,26 @@ function start() {
 
   // handle figure
 
+  const time = document.querySelector('.time');
   const speed = document.querySelector('.speed');
   const bias = document.querySelector('.bias');
   const statusElem = document.querySelector('.status');
 
+  let timeValue = 0;
   let speedValue = 0;
   let biasValue = 0;
-  const split = 100;
-  const momentum = ((max16Bit) / (flyInterval / 1000 - 1)) / split;
-  const biasMomen = ((maxBias) / (flyInterval / 1000 - 1)) / split;
+  const split = 50;
+  const momentum = ((max16Bit) / (flyInterval * 0.85 / 1000)) / split;
+  const biasMomen = ((maxBias) / (flyInterval * 0.85 / 1000)) / split;
 
-  300 
+  const timeInterval = setInterval(() => {
+    timeValue += 1;
+    time.innerHTML = Number(timeValue.toFixed(0)).toLocaleString();
+    if (timeValue === flyInterval / 1000) {
+      clearInterval(timeInterval);
+    }
+  }, 1000)
+
 
   const speedInterval = setInterval(() => {
     speedValue += (momentum)

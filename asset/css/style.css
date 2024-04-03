@@ -44,7 +44,7 @@ body {
   height: 8rem;
 }
 .fly .space-shuttle {
-  animation: fly 10s ease-in forwards;
+  animation: fly 46.25s ease-in forwards;
 }
 .fire .space-shuttle .normal, .explore .space-shuttle .normal, .fall .space-shuttle .normal {
   display: none;
@@ -141,6 +141,8 @@ body {
 .figure .bit-container .label {
   min-width: 3rem;
   display: inline-block;
+  color: #5b5b5b;
+  text-align: right;
 }
 .figure .bit-container span:last-child {
   letter-spacing: 0.1rem;

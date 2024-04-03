@@ -1,7 +1,7 @@
 $land-height: 5rem;
 $space-position-bottom: $land-height - 4.25rem;
 $space-position-left: 3rem;
-$fly-interval: 10s;
+$fly-interval: 37;
 $fall-interval: 3s;
 
 body {
@@ -58,7 +58,7 @@ body {
   }
 
   .fly & {
-    animation: fly $fly-interval ease-in forwards;
+    animation: fly #{$fly-interval/0.8}s ease-in forwards;
   }
 
   .fire &,
@@ -168,13 +168,15 @@ body {
     font-size: 1rem;
     overflow: auto;
     font-weight: 300 !important;
-    p{
+    p {
       margin: 0.1rem;
     }
 
     .label {
       min-width: 3rem;
       display: inline-block;
+      color: #5b5b5b;
+      text-align: right;
     }
     span:last-child {
       letter-spacing: 0.1rem;
